@@ -1,0 +1,115 @@
+*{border:0px; padding:0px;}
+.clr{clear:both;}
+#navigation{background-color:#070707; height:46px;border-bottom:solid 2px #151515; overflow-y:hidden;}
+#navigation .icon_item{cursor:pointer;}
+#nav_icon{background:url(../img/header_navi_icon.png) no-repeat; background-position: 15px 12px; color:#fdfdfd; height:42px; line-height:42px; text-indent:60px; float:left;}
+#mail_icon{background:url(../img/header_email_icon.png) no-repeat; background-position: 15px 8px; color:#fdfdfd; height:42px; line-height:42px; text-indent:60px; padding-right:18px;float:right;}
+#phone_icon{background:url(../img/header_phone_icon.png) no-repeat; background-position: 15px 8px; color:#fdfdfd; height:42px; line-height:42px; text-indent:60px; padding-right:18px;float:right;}
+#mailer_icon{background:url(../img/header_mailer_icon.png) no-repeat; background-position: 15px 12px; color:#fdfdfd; height:42px; line-height:42px; text-indent:50px; padding-right:18px;float:right;}
+.sepline{background:url(../img/header_sepline.png) no-repeat;background-position: 0px 4px;  height:44px; width:2px; float:right;}
+#content_div{position:relative;}
+#logo{background:url(../img/logo_back.jpg) no-repeat; background-position:center; background-size:100% 100%; width:100%; height: 580px;}
+#logo_icon{background:url(../img/logo_icon.png) no-repeat; background-position:center 35%; background-size:316px 316px; width:100%; height: 100%;}
+#slide_border{background:url(../img/slide_side_border.png) no-repeat; background-size:100% 100%; width:100%; height: 140px;}
+#slide_area{position:relative; width:89.6%; margin:0px auto;}
+#slide_area #slide_area_background{background-color:white; padding:10px;}
+.slide_image{background: url(../img/slide_sample_1.jpg) no-repeat; background-size:100% 100%; background-position:center; width:100%; height: 100%;}
+#slide_area #slide_area_bottom{margin-top: -80px; position: absolute; width:100%;height:100px; background: url(../img/slide_down_mask.png) repeat-x; text-align:center;}
+#slide_area_bottom_gap{width:100%; height:70%;}
+.slide_mark{width:24px; height:24px; cursor:pointer; display:inline-block; background:url(../img/slide_mark_normal.png) no-repeat;}
+.slide_mark.selected_mark{background:url(../img/slide_mark_select.png) no-repeat;}
+.studio_paragraph{position:relative; margin-top: 50px; font-size:24pt; font-weight: bold; text-align:center; z-index: 1; font-family: "sakkal majalla";}
+.studio_content{color:gray; text-align:center; font-size: 11pt; font-weight:normal;padding:20px;
+    font-family: "open sans";}
+#social_network{width:100%; text-align:center;}
+#social_facebook, #social_twit, #social_baidu, #social_google{background:url(../img/social_media.png) no-repeat; width:40px; height: 40px; display:inline-block; cursor:pointer;}
+#social_facebook{background-position: -1px 0px;}
+#social_twit{background-position: -46px 0px;}
+#social_baidu{background-position: -91px 0px;}
+#social_google{background-position: -135px 0px;}
+#social_facebook:hover{background-position: -1px -40px;}
+#social_twit:hover{background-position: -46px -40px;}
+#social_baidu:hover{background-position: -91px -40px;}
+#social_google:hover{background-position: -135px -40px;}
+.slide_sepline{background: url(../img/slide_down_sepline.png) no-repeat; background-position:center; width:100%; height: 30px;}
+#category{width:100%;margin:0px auto; text-align:center; height:230px; overflow:hidden;}
+.category_item{height:206px; width:170px; display:inline-block; border:solid 1px #DFDFDF; margin: 18px;cursor:pointer;background-color: #131313;}
+.category_item:hover{background-color: #0CA9FA;}
+.category_item_img{height: 102px;background:url(../img/slide_down_item_icon.png) no-repeat;}
+.category_item:hover .category_item_img{background:url(../img/slide_down_item_icon_over.png) no-repeat;}
+#category_item_design{background-position: 27px 19px;}
+#category_item_market{background-position: -180px 19px;}
+#category_item_print{background-position: -390px 19px;}
+#category_item_hosting{background-position: -600px 19px;}
+#category_item_commerce{background-position: -810px 19px;}
+.category_item_caption{padding-top: 20pt; font-size: 13pt; font-weight:bold; height:102px; background-color: #ffffff;}
+#slide_down_mark{position:relative;}
+#slide_down_token{position:absolute; top:-270px;width:270px; height:540px;background:url(../img/slide_down_token.png) no-repeat; background-size:100% 100%;}
+#slide_down_pencil{position:absolute; left:880px; top: -133px;width:380px; height:266px;background:url(../img/slide_down_pencil.png) no-repeat; background-size:100% 100%;}
+#quick_tip{position:absolute; top:800px; left:1205px; width:55px; height:191px; z-index: 1000; display:none;}
+#quick_tip .quick_tip_item{background:url(../img/quick_tip_normal.png) no-repeat; cursor:pointer;}
+#quick_tip .quick_tip_item:hover{background:url(../img/quick_tip_active.png) no-repeat;}
+#quick_tip .quick_tip_item#quick_tip_item_search{height:62px;}
+#quick_tip .quick_tip_item#quick_tip_item_sms{background-position:0px -62px; height:54px;}
+#quick_tip .quick_tip_item#quick_tip_item_location{background-position:0px -116px; height:75px;}
+.category_select_button{background:url(../img/category_select.png) no-repeat; height:210px; width: 20px; cursor:pointer; display:inline-block;}
+#category_select_prev{background-position:-6px 0px;}
+#category_select_prev:hover{background-position:-48px 0px;}
+#category_select_next{background-position:-28px 0px;}
+#category_select_next:hover{background-position:-70px 0px;}
+#category_items_container{position:relative; width:100%;display:inline-block; height: 230px; overflow:hidden;}
+#category_items{position:absolute; left:0px; top:0px; width: 1050px; height:230px;  display:inline-block;}
+#dream_parent{position:relative;height:939px;}
+#dream_container_0{position:absolute; top:0px; left:0px; background:url(../img/creat_dream_bg_2_0.png) no-repeat; width:100%; height: 939px; background-size: 200% 200%;}
+#dream_container{position:absolute; top:0px; left:0px; background:url(../img/creat_dream_bg_2.png) no-repeat; width:100%; height: 939px; background-size: 200% 200%;}
+#dream_text{position:absolute; top:0px; left:0px; background:url(../img/creat_dream_text.png) no-repeat; width:271px; height:105px;}
+#dream_toy{position:absolute; top:0px; left:0px; background:url(../img/slide_down_toy.png) no-repeat; background-size:100% 100%; width:341px; height:592px;}
+.my_button{width:180px; height:52px; line-height:52px; color: white; font-size:11pt; font-weight:bold; border: solid 1px #717171; display: inline-block; background-color: transparent; cursor:pointer; text-align: center; border-radius:7px; margin: 5px; overflow:hidden;}
+.my_button:hover{background-color: #0ea9f9;}
+.btn-default{background-color: #3a87ad;}
+#facebook_parent{background:url(../img/facebook_bg.jpg) no-repeat;width:100%; height:600px;background-position:center;background-size:100% 100%;}
+#facebook_tv{background:url(../img/facebook_tv.png) no-repeat; width:445px; height:330px; display:inline-block;}
+#facebook_content{display:inline-block; padding-left: 50px;}
+#facebook_content .studio_paragraph{top:-70px;}
+#facebook_content .my_button{color:black;}
+#facebook_content .my_button:hover{color:white;}
+#newsletter_parent{position:relative;height:690px;}
+#newlsetter_container_0{position:absolute; top:0px; left:0px; background:url(../img/newsletter_bg_0.jpg) no-repeat; width:100%; height: 690px; background-position:center;}
+#newlsetter_container{position:absolute; top:0px; left:0px; background:url(../img/newsletter_bg.jpg) no-repeat; width:100%; height: 690px; background-position:center;}
+#newlsetter_container .studio_paragraph{top:130px;}
+.gute_contents{display:inline-block;}
+.gute_select_menu{font-size:11pt;color:#444444;font-weight:normal; height:30pt; line-height:30pt; margin:0px auto; border-bottom: solid 1px #dedede; width:200pt;}
+#gute_slide{position:relative;}
+#gute_slides_container{position:relative;width:100%; overflow:hidden;height:600px;}
+#gute_slides{width:2700px; height:100%;position:absolute;left:0px; top:0px;}
+.gute_slide{width:900px; height:100%;display:inline-block;float:left;}
+.gute_slide img{width:100%; height:100%;}
+.gute_slide_select_button{cursor:pointer; background:url(../img/gute_select.png) no-repeat; position:absolute; width:45px; height:81px;}
+.gute_slide_select_button:hover{background:url(../img/gute_select_over.png) no-repeat;}
+#gute_select_prev{left: 10px; top: 200px; background-position:0px 0px;}
+#gute_select_next{left: 110px; top: 200px; background-position:-47px 0px;}
+#kuden{position: relative;}
+#kunden_bg_0{position:absolute;top:0px;left:0px;width:100%; }
+#kunden_bg{width:100%; }
+#kunden_down_bg{width:100%;position:absolute;top:0px;height:500px; z-index:-1;background:url(../img/kunden_down_bg.png) no-repeat; background-position:center;}
+#kuden .my_button{color:black;}
+#kuden .my_button:hover{color:white;}
+#kuden #kunden_tv .my_button{color:white; font-weight:normal; height:50px;line-height:50px;}
+#kunden_bottom{position:relative; width:100%;z-index:0;top:350px;}
+#kunden_phone{position:relative; width:300px; height:323px; margin:0px auto;margin-top:-323px;}
+#kunden_phone #phone_img{position:absolute; width:300px; height:323px; background:url(../img/kunden_down_phone.png) no-repeat;}
+#jump_bar{position:relative; height:68px; background-color:#0ea9f9; color: white; text-align:center; line-height:68px; border-top:solid 1px white; border-bottom:solid 1px white;}
+#jump_bar .jump_icon{width:20px; height:30px; cursor:pointer; display:inline-block;}
+#jump_bar .jump_link{height:20px; line-height:20px;cursor:pointer; display:inline-block;padding:3px; width:110px; font-family: "sakkal majalla"; font-size: 20px;}
+#jump_Neuigkeiten{background:url(../img/footer_arrow_prev.png) no-repeat; background-position:0px 14px;}
+#jump_menu{background:url(../img/footer_arrow_menu.png) no-repeat;background-position:0px 14px;}
+#jump_Handcrafts{background:url(../img/footer_arrow_next.png) no-repeat;background-position:0px 14px;}
+#email_text{width: 280px; margin:0px auto; margin-bottom:20px; height:40px;}
+#kuden .my_button{height:40px; line-height:40px;}
+#kunden_tv{position:absolute; width:614px; height:509px;}
+#kunden_tv #tv_above{background:url(../img/kunden_tv_above.png) no-repeat;background-size: 100% 100%;}
+#kunden_tv #tv_down{background:url(../img/kunden_tv_bottom.png) no-repeat;height:240px;background-size: 100% 100%; text-align:center;}
+.workflow-item-slide{opacity:0; position: relative}
+
+#facebook-tv-left{    background: url("../img/facebook_tv_left.png"); width: 169px; height: 131px; position: relative; left: 0px; top: 130px}
+#facebook-tv-right{    background: url("../img/facebook_tv_right.png"); width: 46px; height: 92px; position: relative; left: 430px; top: 40px}

@@ -1,0 +1,19 @@
+*{border:0px; padding:0px;}
+.clr{clear:both;}
+body{background-color:white;}
+#search_panel_gap{height:70px;}
+#search_panel{background-color:#141414;height:190px;}
+#search_panel_header{margin:0px auto auto;width:100%;max-width:410px;position:relative; padding-top: 70px;}
+#search_icon{position: relative; left:10px; top:-9px; z-index:2;width:60px; height:60px; background:url(../img/search_icon.png) no-repeat; background-size:100% 100%; display:block; float: left;}
+#search_line{height:60px; line-height:60px; float: left; top:0px; }
+#search_text_container{border:solid 1px #494949; background-color:#202020; color:#f3f3f3; height:42px; line-height:42px; width:300px;display: block; float: left;}
+#search_text_container input{margin:5px; display:block; float: left; background-color:#f2f2f2; width: 60%; height:30px; line-height:30px; font-size:20px; border-right:solid 2px #0ea9f9; text-indent:20px; color: #333;}
+#search_button{background-color:#0ea9f9; height:42px; line-height:42px; width:50px;display:block;cursor:pointer;border-top-right-radius: 15px; border-bottom-right-radius: 15px; float: left;}
+#search_button_icon{margin:10px; margin-left:15px; height:20px;}
+#search_item_select{display:inline-block; height:30px; line-height:30px; color:white; text-indent:25px; background:url(../img/search_item_select.png) no-repeat; background-position:0px 4px; cursor:pointer;}
+#search_content{width: 95%; margin:0px auto;}
+.search_result_item{width: 250px; height: 166px; border-top: solid 2px #0ea9f9; display:inline-block; margin:40px 20px 0px 20px; overflow:hidden; text-align:left;}
+.search_result_item_title{color:#333333; font-weight:bold; font-size:12pt; margin-top:10px; margin-bottom:6px;}
+.search_result_item a{color:#0ea9f9; text-decoration:none; font-size: 9pt; font-weight:normal;}
+.search_result_item_content{color:#4e4e4e; font-weight:normal; font-size:9pt; height:70px; overflow:hidden;}
+.search_result_item_end{width: 250px; height: 20px; border-top: solid 2px #0ea9f9; display:inline-block; margin:40px 20px 0px 20px; }

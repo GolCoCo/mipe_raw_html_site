@@ -1,0 +1,675 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MipeMedia</title>
+
+		<link href="./assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/w3.css" rel="stylesheet" type="text/css"  />
+		<link href="./assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/animate.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/main.css" rel="stylesheet" type="text/css"  />
+		<link href="./assets/css/studio.css" rel="stylesheet" type="text/css"  />
+		<link href="./assets/css/search.css" rel="stylesheet" type="text/css"  />
+		<link href="./assets/css/workflow.css" rel="stylesheet" type="text/css"  />
+
+		<script type="text/javascript" src="./assets/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./assets/js/jquery.cycle.min.js"></script>
+		<script type="text/javascript" src="./assets/js/jsCookie.js"></script>
+		<script type="text/javascript" src="./assets/js/search.js"></script>
+		<script type="text/javascript" src="./assets/js/jquery.mobile-1.4.5.min.js"></script>
+
+		<style>
+			#footer-container .footer-col-item ul{
+				list-style-image: url("assets/img/footer-list-style1.png");
+				float: left;
+				padding-left: 2px;
+			}
+
+			#footer-container .footer-col-item li:hover{
+				color: #0ea9f9;
+			}
+			.top-content li {
+				list-style: none;
+				margin-top: 13px;
+				border-bottom: 1px solid #ccc;
+				font-size: 1em;
+				cursor: pointer;
+			}
+
+			.top-content ul{
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+
+			li.item-over-effect{
+				/*border-right: 1px solid #333;*/
+			}
+
+			.kj-col-lg-3{
+				width: 25%;
+				text-align: center;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="preloader">
+			<img style="margin-top: 40%; margin-left: 50%;" src="./assets/img/spinner.png" />
+		</div>
+		<div id="pageup">
+		</div>
+		<div id="dialog-container" class="top-content" style="z-index: 20000;">
+			<div style="position: fixed; width: 100%; height: 100%;  background: #000; opacity: 0.95;" onclick="hideDialog();"></div>
+			<div class="top-content" id="dlg-navigation" style="background: #fff; width: 60%; box-shadow: 0px 0px 5px 1px #555;">
+				<div style="float: right;">
+					<img src="./assets/img/navi-logo.png" width="100%"/>
+				</div>
+				<div style="float: left; text-align: center; padding: 15% 0px;">
+					<h2 style="color: #000;" class="fade-in-view">Navigation</h2>
+					<ul>
+						<li onclick="hideDialog(); loadPage('home');" class="fade-in-view">Das Studio</li>
+						<li onclick="hideDialog(); loadPage('news');" class="fade-in-view">Neuigkeiten</li>
+						<li onclick="hideDialog(); loadPage('handcrafts');" class="fade-in-view">Handcrafts</li>
+						<li onclick="$('#dlg-navigation').css('display', 'none'); showContact();" class="fade-in-view">Kontakt</li>
+					</ul>
+					<span class="glyphicon glyphicon-search fade-in-view" onclick="$('#dlg-navigation').css('display', 'none'); showSearch();" style="cursor: pointer; border-radius: 2px; border: 1px solid #ccc; padding: 5px 5px 6px 6px; margin-top: 20px;"></span>
+				</div>
+			</div>
+			<div class="top-content" id="dlg-contact" style="width: 100%; height: 100%;">
+				<div style="position: relative; top: 150px; width: 400px; height: 400px; background: #fff; box-shadow: 0px 0px 5px 1px #555;margin: auto; transform: rotate(45deg);">
+					<div onclick="hideDialog();" class="contact-btn-container" style="float: left; margin: 2px 0px 0px 2px;"><span class="fa fa-times-circle contact-btn" style="transform: rotate(-45deg);"></span></div>
+					<div class="contact-btn-container" style="float: right; margin: 0px 3px 0px 0px; transform: rotate(90deg);"><span class="fa fa-phone-square contact-btn" style="transform: rotate(-135deg);"></span></div>
+					<div class="contact-btn-container" style="float: left; margin: 318px 0px 0px -77px; transform: rotate(270deg);"><span class="fa fa-envelope contact-btn" style="transform: rotate(-315deg);"></span></div>
+					<div class="contact-btn-container" style="float: right; margin: 318px -79px 0px 0px; transform: rotate(180deg);"><span class="fa fa-map-marker contact-btn" style="transform: rotate(-225deg);"></span></div>
+				</div>
+
+				<div style="">
+					<h2>Kontakt</h2>
+					<ul style="width: 100%;">
+						<li>www.mipe-media.com</li>
+						<li>info@mipe-media.com</li>
+						<li>+49(0)5232 69 11 22 3</li>
+						<li>Detmolder Str.210 a-b</li>
+						<li>32791 Lage</li>
+					</ul>
+					<div id="social_network">
+						<span id="social_facebook"></span>
+						<span id="social_twit"></span>
+						<span id="social_baidu"></span>
+						<span id="social_google"></span>
+					</div>
+					<div id="dlg-contact-btns">
+						<div class="btn btn-clear news-detail-btn"><span class="fa fa-phone-square"></span>&nbsp;Anrufen</div>
+						<div class="btn btn-clear news-detail-btn"><span class="fa fa-envelope"></span>&nbsp;Schreiben</div>
+						<div class="btn btn-clear news-detail-btn"><span class="fa fa-map-marker"></span>&nbsp;Besuchen</div>
+						<div onclick="hideDialog();">
+							<span class="fa fa-times-circle contact-btn" style="margin-top: 30px;"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top-content" id="dlg-search" style="width: 100%; height: 100%; background: #fff; overflow-y: auto;">
+				<div id="search-overlay">
+					<div id="search_panel">
+						<div style="float: left; padding: 15px;" class="item-over-effect" onclick="hideSearch();">
+							<span class="fa fa-close" style="color: #444;"></span>
+						</div>
+						<!--<div id="search_panel_gap"></div>-->
+						<div id="search_panel_header">
+							<div id="search_icon"></div>
+							<div id="search_line">
+								<div id="search_text_container">
+									<input type=text>
+									<div id="search_item_select">Handcrafts</div>
+								</div>
+								<div id="search_button">
+									<img src="./assets/img/search_button_icon.png" id="search_button_icon">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="height:20px;"></div>
+					<div id="search_content">
+						<div class="search_result_item" id="sample_search_item">
+							<div class="search_result_item_title">Architecture - Wikipedia, the free encyclopedia</div>
+							<a href="http://www.wikipedia/ru/Architecture">http://www.wikipedia/ru/Architecture</a>
+							<div style="height:5px;"></div>
+							<div class="search_result_item_content">
+								Please keep comments relevant to Attribute Contains Prefix Selector [name|=value]. <br>
+								Additional examples and requests for clarification are encouraged, but please do not use these comments as a bug tracker or support forum. <br>
+								Please report bugs on the bug tracker or the jQuery Forum. <br>
+								Request support on the jQuery Forum
+							</div>
+						</div>
+						<a class="btn btn-clear" href="#" onclick="hideSearch();" style="float: right; margin: auto 20px 20px auto;">Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="widget-call" style="right: 1%; top: 50%; position: fixed; z-index: 100;">
+			<div class="container" style="padding: 10px;">
+				<ul style="font-size: 20px; list-style:none; text-align: center; padding: 10px 0px; background: #000; border-radius: 25px; box-shadow: 0px 0px 6px 2px #666; width: 45px; z-index: 1;">
+					<li>
+						<span class="fa fa-envelope"></span>
+					</li>
+					<li>
+						<span class="fa fa-phone"></span>
+					</li>
+					<li style="border: none;">
+						<span class="fa fa-map-marker"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="header-container">
+			<div class="item-over-effect" style="border: none;" onclick="showNavigation();">
+				<!--<img src="assets/img/header-menu.png">-->
+				<span class="fa fa-reorder"></span>
+				NAVIGATION
+			</div>
+
+			<div id="hands-navbar" class="container" style="float: right; margin-right: 25%;">
+				<div class="" style="float: left; background: #000;">
+					<ul class="" style="list-style: none;">
+						<li id="hands-nav-prev" class="item-over-effect" onclick="handsPrevClicked();">
+							<span id="browse-left-title">LUDGER BEERBAUM STABLES | WEBSITE</span>
+							<span class="fa fa-chevron-left"></span>
+						</li>
+						<li class="item-over-effect" id="hands-nav-browse" onclick="showHandsBrowse();">
+							<span class="fa fa-th"></span>
+						</li>
+						<li id="hands-nav-next" class="item-over-effect" onclick="handsNextClicked();">
+							<span class="fa fa-chevron-right"></span>
+							<span id="browse-right-title">LUDGER BEERBAUM STABLES | WEBSITE</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="hands-btn-like" style="float: right; right: 8%; z-index: 1031;">
+					<img src="./assets/img/hands-like-btn.png" />
+					<span class="fa fa-thumbs-up" style="position: absolute; left: 0px; top: 35px; padding: 15px; font-size: 25px;"></span>
+				</div>
+			</div>
+			<div id="contact-navbar" style="height: 1px; float: right;" class="">
+				<ul class="">
+					<li class="item-over-effect">
+						<img id="sound-mute-noti" src="assets/img/header-sound.png" style="display: none; float: left;">
+						<div id="sound-noti">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div>
+							SOUND
+						</div>
+					</li>
+					<li class="item-over-effect">
+						<!--<img src="assets/img/header-newsletter.png">-->
+						<span class="fa fa-paper-plane"></span>
+						<div>NEWSLETTER</div>
+					</li>
+					<li class="item-over-effect">
+						<img src="assets/img/header-mail.png" style="vertical-align: top;">
+						<div>
+							E-MAIL
+						</div>
+					</li>
+					<li class="item-over-effect" style="border: none;">
+						<img src="assets/img/header-phone.png" style="vertical-align: top;">
+						<div>
+							05232-691122-3
+						</div>
+					</li>
+
+				</ul>
+			</div><!-- /.nav-collapse -->
+
+			<div class="" id="hands-browse-navbar" style="display: none; width:100%; color: #fff;">
+				<div style="float: left; padding: 15px;" class="item-over-effect" onclick="hideHandsBrowse();">
+					<span class="fa fa-close"></span>
+				</div>
+				<div style="float: left; margin-left: 15px; padding-top: 15px;"><span id="hands-browse-type">ALLE</span>&nbsp;PROJEKTE</div>
+
+				<div class="container" id="hands-project-type" style="margin-left: 40%; color: #ccc; ">
+					<div style="float: left; padding: 15px;" class="item-over-effect active" >
+						<!--<span class="fa fa-th-large"></span>-->
+						<img src="assets/img/cateogry_icon1.png">
+						<span style="">ALLE</span>
+					</div>
+					<div style="float: left; padding: 15px;" class="item-over-effect" >
+						<img src="assets/img/cateogry_icon2.png">
+						<span style="">WEB</span>
+					</div>
+					<div style="float: left; padding: 15px;" class="item-over-effect" >
+						<img src="assets/img/cateogry_icon3.png">
+						<span style="">PRINT</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="width: 100%">
+			<div class='dropdown-content'>
+				<img src='assets/img/news-detail-2.png' style='width: 300px'>
+				<div class='desc'>INTERNETSPASENZ</div>
+			</div>
+		</div>
+
+		<!--<div class="container">-->
+			<div id="main-content" class="full-width">
+
+			</div>
+			<div id="footer-container" class="" style="float: left;">
+
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-ok" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 4px 6px 8px;"></span></h5>
+					<h3><span style="float: left;">&nbsp;Service</span></h3>
+					<div class = "footer-item-content">
+						Magento, Drupal, Typo3 und Wordpress gehören zu unseren primär genutzten Content Management Systemen.<br/><br/>
+						<div class="kj-col-lg-3">
+							<img src="./assets/img/magento-logo.png" /><br/>
+							<font size="1">Magento</font>
+						</div>
+						<div class="kj-col-lg-3">
+							<img src="./assets/img/drupal-logo.png" /><br/>
+							<font size="1">Drupal</font>
+						</div>
+						<div class="kj-col-lg-3">
+							<img src="./assets/img/typo3-logo.png" /><br/>
+							<font size="1">TYPO3</font>
+						</div>
+						<div class="kj-col-lg-3">
+							<img src="./assets/img/wordpress-logo.png" /><br/>
+							<font size="1">WORDPRESS</font>
+						</div>
+					</div>
+				</div>
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-tint" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 4px 6px 8px; transform: rotate(180deg);"></span></h5>
+					<h3><span style="float: left;">&nbsp;Adresse</span></h3>
+					<div class = "footer-item-content">
+						<p>
+							Mipe Media Design Studio<br />
+							Detmolder Str. 210 A-B<br />
+							32791 Lage<br />
+							Telefon:   +49 (0) 5232 691122 3<br />
+							E-Mail:      info@mipe-media.com<br />
+						</p>
+					</div>
+					<ul style="margin: 10px auto auto 15px; clear: both;">
+						<li>ANRUFEN</li>
+						<li>GOOGLE MAPS</li>
+					</ul>
+				</div>
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-th-list" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 4px 6px 8px;"></span></h5>
+					<h3><span style="float: left;">&nbsp;Sitemap</span></h3>
+					<div class = "footer-item-content">
+						<ul style="margin-right: 40px; margin-left: 15px;">
+							<li>Root</li>
+							<li>Das Studio</li>
+							<li>Neuigkeiten</li>
+							<li>Handcrafts</li>
+						</ul>
+						<ul style="margin-left: 15px;">
+							<li>Kontakt</li>
+							<li>Impressum</li>
+							<li>Partner</li>
+							<li>Jobs</li>
+						</ul>
+						<p><a class="btn btn-clear" href="#">NEWSLETTER</a></p>
+					</div>
+				</div>
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-time" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 4px 6px 8px;"></span></h5>
+					<h3><span style="float: left;">&nbsp;Fakten</span></h3>
+					<div class = "footer-item-content">
+						Werbeagentur für Webdesign, Printdesign, eCommerce, Werbemittel, online Marketing, Webhosting, Onlineshops, Landingpages, Logo Gestaltung, Corporate Design, Google AdWords, SEO optimierung, Kampagnen, Analysen, WEB 2.0, Konzeption, Internetseiten, Webseiten Blogs, Portable, Magento, Typo3, Drupal, Wordpress in Detmold, OWL, Lage, Lemgo, Bielefeld, Paderborn, Herford, Lippe, NRW...
+					</div>
+				</div>
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-lock" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 3px 4px 7px 6px;"></span></h5>
+					<h3><span style="float: left;">&nbsp;Jobangbote</span></h3>
+					<div class = "footer-item-content">
+						Du bist auf der Suche nach spannenden Projekten und kreativen Mitarbeitern in einem modernen Unternehmen? Na, dann: auf geht`s...<br /><br/>
+						<p><a class="btn btn-clear" href="#">MEHR ERFAHREN</a></p>
+					</div>
+				</div>
+				<div class="footer-col-item">
+					<h5><span class="glyphicon glyphicon-user" style="float: left; background: #FFF; border-radius: 50%; color: #000; padding: 4px 6px 8px;"></span></h5>
+					<h3><span style="float: left;">&nbsp;Partner</span></h3>
+					<div class = "footer-item-content">
+						<img src="./assets/img/footer-partner-icon.png" style="float: left; margin-right: 11px;" />
+						<p>24-7 Media Studios info@24-7media.de Stunned Flash Projects.</p>
+						<p>Our freedom to explored what we like, leads to some immersive and powerful results for web design, multimedia and cross media productions based on former Adobe Flash technology.</p>
+					</div>
+				</div>
+			</div>
+		<!--</div>-->
+	</body>
+</html>
+
+<script type="text/javascript">
+	var lastScrollTop = 0;
+	var pageupTimer = -1;
+	var targetPage;
+	var pageContent = "";
+
+	$(function(){
+		init();
+		kjResizeDlgs();
+
+		AddCodeToPreview();
+
+		//window.requestAnimationFrame(moveBackground);
+		setTimeout(moveBackground, 30);
+		$(window).on("scroll scrollstop", windowScroll);
+		$(".ui-loader-default").remove();
+	});
+
+	function init(){
+		targetPage = "home";
+		if(getCookie('isNewbie') != "") {
+			targetPage = "news";
+		}
+		else{
+			targetPage = "home";
+		}
+//		targetPage = "home";
+//		targetPage = "handcrafts";
+//		targetPage = "news";
+		loadPage(targetPage);
+	}
+
+	function loadPage(page){
+		$("#contact-navbar li").css("display", "initial");
+		if(page == "home"){
+			if(getCookie('isNewbie') == "") {
+				$("#header-container").css("margin-top", "0px");
+				$("#footer-container").css("opacity", "0");
+				$('#contact-navbar').css("display", "block");
+				$("#hands-navbar").css("display", "none");
+			}else{
+				$('#contact-navbar').css("display", "block");
+				$("#hands-navbar").css("display", "none");
+				$("#footer-container").css("opacity", "0");
+				$("#main-content").css("opacity", 0);
+			}
+			$('#preloader').removeClass("animated");
+			$('#preloader').removeClass("fadeOut");
+			$('#preloader').css("display", "block");
+//			$("#widget-call").css("display", "none");
+
+//			$("#contact-navbar li").eq(0).css("display", "none");
+		} else if (page == "handcrafts") {
+			$('#contact-navbar').css("display", "none");
+			$("#hands-navbar").css("display", "block");
+		} else if(page == "news"){
+			$('#contact-navbar').css("display", "block");
+			$("#hands-navbar").css("display", "none");
+			$("#contact-navbar li").eq(0).css("display", "none");
+			$("#contact-navbar li").eq(2).css("display", "none");
+		}
+
+		$(window).scrollTop(0);
+		$.ajax({
+			url: page + "/index.html",
+			type: "POST",
+			success: function(data){
+				pageContent = data;
+				if($("#main-content").css("opacity") == 0.1){
+					setPageContent();
+				}
+			}
+		});
+
+		$("#footer-container").fadeTo("slow", 0);
+		$("#main-content").fadeTo("slow", 0.0, function(){
+			if(pageContent){
+				setPageContent();
+			}
+		});
+		targetPage = page;
+	}
+
+	function setPageContent(){
+		$("#main-content").html(pageContent);
+		pageContent = "";
+		$("#main-content").fadeTo("slow", 1, "swing");
+		if(targetPage == "news")
+			$("#footer-container").fadeTo("slow", 1, "swing");
+		$(".wrap-look-around").off("mousemove click").on("mousemove click", function(event){
+			var x, y;
+			x = event.pageX - $(this).offset().left;
+			y = event.pageY - $(this).offset().top;
+			x = -x * 0.4;
+			y = -y * 0.4;
+			$(this).attr("data-to-x", x);
+			$(this).attr("data-to-y", y);
+		});
+	}
+	function showNavigation() {
+		$(".top-content").css("display", "none");
+		$("#dlg-navigation").css("display", "block");
+		$("#dialog-container").fadeIn(200);
+		var delay = 0;
+		$("#dlg-navigation .fade-in-view").css("opacity", 0);
+		$("#dlg-navigation .fade-in-view").each(function(index, element){
+			setTimeout(function() {
+				$("#dlg-navigation .fade-in-view").eq(index).animate({opacity: 1}, 400);
+			}, delay);
+			delay += 100;
+		});
+
+		kjResizeDlgs();
+	}
+
+	function hideDialog(){
+		$("#dialog-container").css("display", "none");//.fadeOut(200);//
+		$("html").css("overflow", "initial");
+	}
+
+	function showContact(){
+		$("#dlg-contact").css("display", "block");
+
+		if($("#dlg-contact-btns").css("display") == "none") {
+			$("#dlg-contact").css("top", "-150px");
+			$("#dlg-contact").css("left", "-200px");
+			$("#dlg-contact").animate({top: "0px", left: "0px"}, 600, function () {
+				$("#dlg-contact").removeClass("rotate");
+			});
+			$("#dlg-contact").addClass("rotate");
+		}
+		else
+		{
+			$("#dlg-contact").css("opacity", "0");
+			$("#dlg-contact").animate({opacity: 1}, 1000);
+		}
+	}
+
+	function showSearch(){
+		$("#dlg-search").css("display", "block");
+		var dimen = $(window).width() > $(window).height() ?  $(window).width() : $(window).height();
+		$("#search-overlay").css("opacity", "0.1")
+		$("#search-overlay").animate({width: dimen + 'px', height: dimen + 'px', opacity: 1}, "slow", function() {
+			$("#search-overlay").animate({borderBottomRightRadius: "0px"}, "fast");
+		});
+		$("html").css("overflow", "hidden");
+		$("#dlg-search").scrollTop(0);
+	}
+
+	function hideSearch(){
+		$("#search-overlay").animate({borderBottomRightRadius: "100%"}, "fast", function(){
+			$("#search-overlay").animate({width: 0, height: 0, opacity: 0.1}, "slow", function() {
+				hideDialog();
+			});
+		});
+	}
+
+	function showHandsBrowse(){
+		$('#hands-browse').css('display', 'block');
+		$('html').css('overflow', 'hidden');
+		$("#header-container > div").eq(0).css("display", "none");
+		$("#header-container > div").eq(1).css("display", "none");
+		$("#header-container > div").eq(3).css("display", "block");
+		$(".hands-btn-like").css("display", "none");
+	}
+
+	function hideHandsBrowse(){
+		$("#hands-browse").css("display", "none");
+		$("html").css("overflow", "initial");
+		$("#header-container > div").eq(0).css("display", "block");
+		$("#header-container > div").eq(1).css("display", "block");
+		$("#header-container > div").eq(3).css("display", "none");
+		$(".hands-btn-like").css("display", "block");
+	}
+
+	function windowScroll(e) {
+		var st = parseInt($(this).scrollTop());
+		if(targetPage == "handcrafts"){
+			kjRefreshHandsCenter();
+		}
+
+		$("#logo-container").stop();
+		$("#logo-container").animate({top: -st / 4}, 10, "swing");
+		$("#widget-call").animate({top: window.innerHeight / 2 - st / (document.body.scrollHeight / window.innerHeight) / 2}, 10, "swing");
+
+		// On Scroll up
+		if(pageupTimer != -1 && st != lastScrollTop)
+			clearTimeout(pageupTimer);
+		if (st < lastScrollTop) {
+			if ($(this).scrollTop() > (1.3 * $(window).height())) {
+				pageupTimer = setTimeout(function(){
+					$('#pageup').fadeOut(1000);
+					pageupTimer = -1;
+				}, 1500);
+
+				if ($('#pageup').is(':visible') == false) {
+					$('#pageup').fadeIn(1000);
+				}
+			} else {
+				$('#pageup').stop().fadeOut(500);
+			}
+		}
+		if( st > lastScrollTop) {
+			$('#pageup').stop().fadeOut(500);
+		}
+		lastScrollTop = st;
+	}
+
+	$('#pageup').click(function(e) {
+		e.preventDefault();
+		$("html, body").stop().animate({
+			scrollTop: 0
+		}, '1500', 'swing', function() {
+			$('#pageup').stop().fadeOut(500);
+		});
+	});
+
+	$(window).resize(function(){
+		kjResizeDlgs();
+	});
+
+	function kjResizeDlgs(){
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		$("#dlg-navigation").css("margin-top", (height - parseInt($("#dlg-navigation").css("height"))) / 2 + "px");
+		$("#dlg-navigation").css("margin-left", width * 0.2 + "px");
+	}
+
+	function moveBackground(){
+		$(".wrap-look-around").each(function(){
+			var friction = 1 / 20;
+			var to_x = parseFloat($(this).attr("data-to-x")), to_y = parseFloat($(this).attr("data-to-y"));
+			var cur_x = parseFloat($(this).attr("data-cur-x")), cur_y = parseFloat($(this).attr("data-cur-y"));
+			if(isNaN(to_x) || isNaN(to_y))
+			{
+				return;
+			}
+			if(isNaN(cur_x) || isNaN(cur_y)) {
+				cur_x = -this.offsetWidth * 0.2;
+				cur_y = -this.offsetHeight * 0.2;
+			}
+			var x = cur_x + (to_x - cur_x) * friction, y = cur_y + (to_y - cur_y) * friction;
+
+			$(this).attr("data-cur-x", x);
+			$(this).attr("data-cur-y", y);
+
+//			var translate = "translate(" + x + "px, " + y + "px) scale(1.4)";
+//			$(this).css({
+//				'-webit-transform': translate,
+//				'-moz-transform': translate,
+//				'transform': translate});
+			$(this).css("background-position", x + "px " + y + "px");
+		});
+//		window.requestAnimationFrame(moveBackground);
+		setTimeout(moveBackground, 30);
+	}
+
+	function AddCodeToPreview(){
+		var pre_left = $("#hands-nav-prev");
+		var pre_right=$("#hands-nav-next");
+		var pre_content=$("#hands-nav-browse");
+		pre_left.hover(function(){
+			var item_left = pre_content.offset().left;
+			$(".dropdown-content").css("left",item_left-310+"px");
+			$(".dropdown-content").css("top",$(window).scrollTop()+52+"px");
+			$(".dropdown-content").stop();
+			$(".dropdown-content").css({"display": "block", "opacity": 0});
+			$(".dropdown-content").animate({opacity: 1}, "slow", "swing");
+		}, function(){
+			$(".dropdown-content").stop().css({"display": "none"});
+		});
+
+		pre_right.hover(function(){
+			var item_left=	pre_right.offset().left;
+			$(".dropdown-content").css("left", item_left+"px");
+			$(".dropdown-content").css("top",$(window).scrollTop()+52+"px");
+			$(".dropdown-content").stop();
+			$(".dropdown-content").css({"display": "block", "opacity": 0});
+			$(".dropdown-content").animate({opacity: 1}, "slow", "swing");
+		}, function(){
+			$(".dropdown-content").stop().css({"display": "none"});
+		});
+	}
+
+	var pageSwipeX;
+
+	$("body").on("vmousedown mousedown", function(event){
+		pageSwipeX = event.pageX;
+	}).on("vmousemove mousemove", function(event){
+		if(targetPage == "home"){
+			if(pageSwipeX != 0 && pageSwipeX > $(window).innerWidth() * 0.9 && pageSwipeX - event.pageX > 30){
+				loadPage("handcrafts");
+				pageSwipeX = 0;
+			}else if(pageSwipeX != 0 && pageSwipeX < $(window).innerWidth() * 0.1 &&  event.pageX - pageSwipeX > 30) {
+				loadPage("news");
+				pageSwipeX = 0;
+			}
+		}
+
+		if(targetPage == "news"){
+			if(pageSwipeX != 0 && pageSwipeX > $(window).innerWidth() * 0.9 && pageSwipeX - event.pageX > 30) {
+				loadPage("home");
+				pageSwipeX = 0;
+			}
+		}
+
+		if(targetPage == "handcrafts") {
+			if (pageSwipeX != 0 && pageSwipeX < $(window).innerWidth() * 0.1 && event.pageX - pageSwipeX > 30) {
+				loadPage("home");
+				pageSwipeX = 0;
+			}
+		}
+	}).on("vmouseup mouseup", function(event){
+		pageSwipeX = 0;
+	});
+
+</script>

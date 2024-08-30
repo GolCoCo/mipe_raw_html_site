@@ -1,0 +1,100 @@
+.hands-left-content ul{list-style-image: url("../img/hands-type-kunden.png");}
+
+.hands-prev-project{
+    /*left: -100%;*/
+}
+
+.hands-current-project{
+    /*left: 0px;*/
+}
+
+.hands-next-project{
+    /*left: 100%;*/
+}
+
+.hands-project-item{
+    /*position: absolute;*/
+    position: relative;
+    top: 0px;
+    float: left;
+}
+
+
+.hands-container{    width: 100%;    height: 2300px;}
+
+.hands-header{    width:100%;    float: left;    background:#141414;}
+.hands-navigation{    float: left;    width: 32%;    height: 100%;}
+.hands-navigation_item{    float: left;    cursor: pointer;}
+.hands-navigation_item_iamge{padding-left:20px;      padding-right: 10px;}
+.hands-buttons{width:58%; float: left;}
+.hands-buttonstyle{float: left;cursor: pointer}
+.hands-border1{margin: 0 10px;border-left: 1px solid #484848;float: left;height: 20px;}
+.hands-like{width:10%;float: right}
+.hands-likebutton{cursor: pointer;float: left}
+
+#hands-browse{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20000;
+    background: #fff;
+    opacity: 0.9;
+    display: none;
+}
+
+#hands-browse-navbar .item-over-effect img{
+    width: 23px;
+}
+
+.hands-left-content {height:98%;width: 320px;padding:0px 40px;float:left;background-color:white;}
+.hands-left-logo{margin-top: 15%;}
+.hands-left-img{margin-top: 40px;}
+.hands-left-title1{margin-top: 10px;}
+.hands-left-desc1{margin-top: 10px; font-size: 18px;}
+.hands-left-desc{color: #444; margin-top: 15px;}
+.hands-left-separator{border-bottom: 1px solid #ccc; margin: 30px auto;}
+
+.hands-center-content{
+    float: left;
+    width: 3%;
+    margin-right: -3%;
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    left: 320px;
+}
+
+.hands-right-content {position: relative; padding-bottom: 5px; float:right; border-left: 35px solid #000;}
+.hands-top{width: 100%; height: 37%;}
+.hands-bottom{background: #1913d0}
+
+li.hands-type-web{
+    list-style-image: url(../img/hands-type-web.png);
+}
+
+li.hands-type-print{
+    list-style-image: url(../img/hands-type-print.png);
+}
+
+li.hands-type-kunden{
+    list-style-image: url(../img/hands-type-kunden.png);
+}
+
+.hands-list-type-1{
+    margin: 10px auto;
+}
+
+.hands-left-content img{
+    max-width: 100%;
+}
+
+@media (max-width: 419px){
+    .hands-center-content{
+        display: none;
+    }
+    .hands-right-content{
+        border: none;
+        float: left;
+    }
+}

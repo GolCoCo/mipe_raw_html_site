@@ -1,0 +1,35 @@
+#workflow-container{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    float: left;
+    background: #fff url('../img/workflow_background_2.png') no-repeat;
+    background-attachment: fixed;
+    visibility: hidden;
+    z-index: 1031;
+}
+
+@font-face {
+    font-family: 'Sakkal Majalla';
+    src: url('../fonts/sakkal-majalla-bold.ttf');
+    src: url('../fonts/sakkal-majalla-bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'open sans';
+    src: url('../fonts/opensans-bold.ttf');
+    src: url('../fonts/opensans-regular.ttf');
+}
+
+.work-part-container{
+    /*width: 100%;*/
+    width: 300px;
+    background: white;
+    float: left;
+    display: block;
+    text-align: center;
+    box-shadow: 10px 10px 20px 0px #AAA;
+    position: fixed;
+}
+
